@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
 
 	/* open input and output files */
 	ReadFile = open("input.txt", O_RDONLY);
-	WriteFile = open("output.txt", O_CREAT | O_WRONLY, 0600);
+	WriteFile = open("output.txt", O_CREAT|O_WRONLY|O_APPEND, 0600);
 	
 	/* read and write byte by byte */
 	/* read returns 0 when EOF - END OF FILE */
