@@ -6,9 +6,15 @@
 #include <unistd.h>
 
 int main(int argc, char *argv[]) {
-	int file = open("output.txt", O_CREAT | O_WRONLY, 0600);
+	char buffer[11];
+	int ReadFile;
+	int WriteFile;
 
-	write(file, "bla bla\n", 8);
+	ReadFile = open("input.txt", O_RDONLY);
+	read(ReadFile, buffer, 11);
+	close(ReadFile);
 
-	close(file);
+	WriteFile = open("output.txt", O_CREAT | O_WRONLY, 0600);
+	write(WriteFile, buffer, 11);
+	close(WriteFile);
 }
