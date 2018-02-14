@@ -2,8 +2,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <errno.h>
-
 #include <unistd.h>
+#include <stdio.h>
 
 int main(int argc, char *argv[]) {
 
@@ -21,6 +21,12 @@ int main(int argc, char *argv[]) {
 	   /* open input and output files */
 	   ReadFile = open(argv[i], O_RDONLY);
 	   WriteFile = open(argv[i+1], O_CREAT|O_WRONLY|O_APPEND,0600);
+
+	   /* If unable to open file */
+	   if (ReadFile == -1) {
+		perror("Error");
+		return(-1);
+	   }
 
 	   /* read and write byte by byte */
 	   /* read function returns 0 when EOF - END OF FILE */
