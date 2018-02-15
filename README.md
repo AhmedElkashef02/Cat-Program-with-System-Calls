@@ -25,10 +25,10 @@ Flags
 
 Experiment
 ----------
-Here is a list of commands to try:
 - `./mycat file1.txt file2.txt file3.txt`: output from each file will be printed to standard output.
 - `./mycat file100.txt`: an error will be printed to standard output.
 - `./mycat`: no output will be printed.
 - `./mycat file1 | grep string1`: A line containing "string1" will be printed.
+
 
 Assignment By: Ahmed SalahEldin Farouk Elkashef - 1410216
