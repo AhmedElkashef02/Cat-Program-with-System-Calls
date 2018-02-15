@@ -8,19 +8,12 @@
 int main(int argc, char *argv[]) {
 
 	for (int i = 1; i < argc; i++) {
-	   
-	   /* stop function at the final argument */
-	   if ( i+1 > argc-1 ) { 
-		return 0;
-	   }
 
 	   char buffer[1024];
 	   int ReadFile;
-	   int WriteFile;
 
 	   /* open input and output files */
 	   ReadFile = open(argv[i], O_RDONLY);
-	   WriteFile = open(argv[i+1], O_CREAT|O_WRONLY|O_APPEND,0600);
 
 	   /* If unable to open file */
 	   if (ReadFile == -1) {
@@ -31,11 +24,11 @@ int main(int argc, char *argv[]) {
 	   /* read and write byte by byte */
 	   /* read function returns 0 when EOF - END OF FILE */
 	   while ( read(ReadFile, buffer, 1) > 0 ) { 
-		write(WriteFile, buffer, 1);
+		/* write to standard output, file discriptor = 1 */
+		write(1, buffer, 1);
 	   }
 
-	   /* close input and output files */
+	   /* close file */
 	   close(ReadFile);
-	   close(WriteFile);
 	}
 }
