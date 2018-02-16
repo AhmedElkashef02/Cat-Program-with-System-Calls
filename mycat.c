@@ -11,11 +11,13 @@ int main(int argc, char *argv[]) {
 
 	/* Handle 1 argument */
 	if (argc < 2) {
+	   /* read from STD INPUT */
 	   while (read(0, buffer, 1) > 0) {
 		write(1, buffer, 1);
 	   }
 	}
 
+	/* Handle several arguments */
 	for (int i = 1; i < argc; i++) {
 
 	   int ReadFile;
