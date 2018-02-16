@@ -5,11 +5,11 @@ The program is completely written in `C`, and uses the default compiler for `Fre
 
 ## How to run the program
 
-- Clone or download this repository
-- Navigate to the directory and open it on terminal
-- Compile the source code using `cc mycat.c`
-- Change the name of the executable to mycat using the command `mv a.out mycat`
-- Run the command `./mycat file1.txt file 2.txt file3.txt` - you can replace files with whatever files you would like
+- Clone or download this repository.
+- Navigate to the directory and open it on terminal.
+- Compile the source code using `make`.
+- Now you have an executable with the name of `mycat`.
+- You can remove the executable using `make clean`.
 
 System Calls
 ------------
@@ -21,14 +21,15 @@ System Calls
 
 Flags
 -----
-- `O_RDONLY`: short for Read Only
+- `O_RDONLY`: short for Read Only.
 
 Experiment
 ----------
 - `./mycat file1.txt file2.txt file3.txt`: output from each file will be printed to standard output.
 - `./mycat file100.txt`: an error will be printed to standard output.
-- `./mycat`: no output will be printed.
+- `./mycat`: Program will take input from the user and then the output will be printed to standard output.
+- `./mycat < file1 > file2`: Input will be read from file1 and written into file2.
 - `./mycat file1 | grep string1`: A line containing "string1" will be printed.
 
 
-Assignment By: Ahmed SalahEldin Farouk Elkashef - 1410216
+Assignment By: Ahmed SalahEldin Farouk Elkashef - 1410216.
