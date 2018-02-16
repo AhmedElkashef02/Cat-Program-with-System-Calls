@@ -7,9 +7,17 @@
 
 int main(int argc, char *argv[]) {
 
+	char buffer[1024];
+
+	/* Handle 1 argument */
+	if (argc < 2) {
+	   while (read(0, buffer, 1) > 0) {
+		write(1, buffer, 1);
+	   }
+	}
+
 	for (int i = 1; i < argc; i++) {
 
-	   char buffer[1024];
 	   int ReadFile;
 
 	   /* open input and output files */
